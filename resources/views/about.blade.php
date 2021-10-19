@@ -11,6 +11,11 @@
     <div class="container mt-4">
         <h1>О блоге</h1>
         <p>Эксперименты с Laravel</p>
+        <ul>
+        @foreach($team as $person)
+            <li>{{ $person["name"] }} - {{ $person["position"] }}</li>
+        @endforeach
+        </ul>
     </div>
     </body>
 </html>
