@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticlesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,4 @@ Route::get('about', function () {
     return view('about', ["team" => $team]);
 });
 
-Route::get('articles', function () {
-    return view('articles');
-});
+Route::get('articles', [ArticlesController::class, 'index']);
