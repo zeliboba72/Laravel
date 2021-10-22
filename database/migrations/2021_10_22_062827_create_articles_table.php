@@ -18,6 +18,8 @@ class CreateArticlesTable extends Migration
             $table->string('name');
             $table->text('body');
             $table->integer('views_count')->default(0);
+            $table->integer('likes_count')->default(0);
+            $table->string('state')->default('unpublished');
             $table->timestamps();
         });
     }
