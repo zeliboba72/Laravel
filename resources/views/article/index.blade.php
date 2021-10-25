@@ -4,6 +4,10 @@
 @section('header', 'Статьи')
 
 @section('content')
+    {{ Form::open(['url' => route('articles.index'), 'method' => 'GET']) }}
+        {{ Form::text('q', $q ?? "") }}
+        {{ Form::submit('Найти статью') }}
+    {{ Form::close() }}
     <table class="table table-light table-bordered mt-3">
         <thead>
         <tr class="table-dark">
