@@ -14,12 +14,12 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($data as $row)
+        @foreach($articles as $article)
             <tr>
-                <th scope="row">{{ $row["id"] }}</th>
-                <td>{{ $row["name"] }}</td>
-                <td>{{ $row["body"] }}</td>
-                <td>{{ $row["views_count"] }}</td>
+                <th scope="row">{{ $article->id }}</th>
+                <td>{{ $article->name }}</td>
+                <td>{{ Str::limit($article->body, 30) }}</td>
+                <td>{{ $article->views_count }}</td>
             </tr>
         @endforeach
         </tbody>

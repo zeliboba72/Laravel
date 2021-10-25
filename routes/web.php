@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RatingController;
+use App\Http\Controllers\ArticleCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +17,12 @@ use App\Http\Controllers\RatingController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PageController::class, 'home'])->name('home');
 
-Route::get('about', [PageController::class, 'about']);
+Route::get('about', [PageController::class, 'about'])->name('about');
 
-Route::get('articles', [ArticlesController::class, 'index']);
+Route::get('articles', [ArticleController::class, 'index'])->name('articles.index');
 
-Route::get('rating', [RatingController::class, 'index']);
+Route::get('rating', [RatingController::class, 'index'])->name('rating');
+
+Route::get('article-categories', [ArticleCategoryController::class, 'index'])->name('article-categories.index');
