@@ -17,6 +17,8 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('body');
+            $table->bigInteger('category_id')->unsigned()->nullable();
+            $table->foreign('category_id')->references('id')->on('article_categories');
             $table->integer('views_count')->default(0);
             $table->integer('likes_count')->default(0);
             $table->string('state')->default('unpublished');

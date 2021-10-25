@@ -17,7 +17,9 @@
         @foreach($articleCategories as $articleCategory)
             <tr>
                 <th scope="row">{{ $articleCategory->id }}</th>
-                <td>{{ $articleCategory->name }}</td>
+                <td>
+                    <a href="{{ route('article-categories.index') }}/{{$articleCategory->id}}">{{ $articleCategory->name }}</a>
+                </td>
                 <td>{{ $articleCategory->description }}</td>
                 <td>
                     @if($articleCategory->state === 'unpublished')

@@ -11,15 +11,25 @@
             <th scope="col">Название</th>
             <th scope="col">Текст</th>
             <th scope="col">Кол-во просмотров</th>
+            <th scope="col">Ссылка на категорию</th>
         </tr>
         </thead>
         <tbody>
         @foreach($articles as $article)
             <tr>
                 <th scope="row">{{ $article->id }}</th>
-                <td>{{ $article->name }}</td>
+                <td>
+                    <a href="{{ route("articles.index") }}/{{ $article->id }}">
+                        {{ $article->name }}
+                    </a>
+                </td>
                 <td>{{ Str::limit($article->body, 30) }}</td>
                 <td>{{ $article->views_count }}</td>
+                <td>
+                    <a href="{{ route('article-categories.index') }}/{{ $article->category_id }}">
+                        {{ $article->category_name }}
+                    </a>
+                </td>
             </tr>
         @endforeach
         </tbody>
