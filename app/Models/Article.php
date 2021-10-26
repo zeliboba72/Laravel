@@ -9,6 +9,12 @@ class Article extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        "name",
+        "body",
+        "category_id",
+    ];
+
     public function isPublished():bool
     {
         return $this->state == 'published';

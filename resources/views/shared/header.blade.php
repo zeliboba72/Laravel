@@ -7,6 +7,10 @@
                    href="{{ route('articles.index') }}">Статьи</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link{{ \Illuminate\Support\Facades\Route::is('articles.create') ? " active" : "" }}"
+                   href="{{ route('articles.create') }}">Создать статью</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link{{ \Illuminate\Support\Facades\Route::is('rating') ? " active" : ""}}"
                    href="{{ route('rating') }}">Рейтинг статей</a>
             </li>
@@ -17,6 +21,10 @@
             <li class="nav-item">
                 <a class="nav-link{{ \Illuminate\Support\Facades\Route::is('article-categories.index') ? " active" : "" }}"
                    href="{{ route('article-categories.index') }}">Категории статей</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link{{ \Illuminate\Support\Facades\Route::is('article-categories.create') ? " active" : "" }}"
+                   href="{{ route('article-categories.create') }}">Создать категорию</a>
             </li>
         </ul>
     </nav>

@@ -30,9 +30,14 @@
                 <td>{{ Str::limit($article->body, 30) }}</td>
                 <td>{{ $article->views_count }}</td>
                 <td>
-                    <a href="{{ route('article-categories.index') }}/{{ $article->category_id }}">
-                        {{ $article->category_name }}
-                    </a>
+                    @if($article->category_id)
+                        <a href="{{ route('article-categories.index') }}/{{ $article->category_id }}">
+                            {{ $article->category_name }}
+                        </a>
+                    @else
+                        <p>Без категории</p>
+                    @endif
+
                 </td>
             </tr>
         @endforeach
