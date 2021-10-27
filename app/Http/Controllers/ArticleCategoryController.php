@@ -44,4 +44,24 @@ class ArticleCategoryController extends Controller
 
         return redirect()->route('article-categories.index');
     }
+
+    public function edit($id)
+    {
+        $articleCategory = ArticleCategory::findOrFail($id);
+        return view('article_category.edit', compact('articleCategory'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $articleCategory = ArticleCategory::findOrFail($id);
+
+        $data = $request->validate([
+            "name" => "required",
+            "description" => "required",
+        ]);
+
+        $articleCategory->fill($data);
+        $articleCategory->save();
+        redirect()->route("article-categories.index");
+    }
 }

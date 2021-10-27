@@ -17,4 +17,5 @@
     @else
         <p>Нет статей.</p>
     @endif
+    <a href="{{ route('article-categories.edit', $articleCategory->id) }}" class="btn btn-primary mt-4">Редактировать эту категорию</a>
 @endsection

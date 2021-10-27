@@ -12,7 +12,7 @@ foreach ($categories as $category) {
 
 @section('content')
     @if($errors->any())
-        <div>
+        <div class="alert alert-danger" role="alert">
             <ol>
                 @foreach($errors->all() as $error)
                     <li>{{ $error }}</li>
